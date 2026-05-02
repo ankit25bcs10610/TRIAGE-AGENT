@@ -211,6 +211,19 @@ const examples = [
     response:
       'Because this involves potentially unauthorized card activity, the ticket should be escalated immediately to the fraud support team.',
   },
+  {
+    subject: 'Please add bulk candidate export',
+    company: 'HackerRank',
+    issue:
+      'We would like a feature that exports all candidate scorecards in one CSV instead of downloading them one by one.',
+    status: 'Escalated',
+    requestType: 'feature_request',
+    productArea: 'general_support',
+    justification:
+      'This is a product enhancement request rather than a documented workflow issue, so it should be routed for human review.',
+    response:
+      'This looks like a feature request rather than a support issue with a documented answer, so it should be escalated for product-team review.',
+  },
 ]
 
 const assistantPrompts = [
@@ -281,6 +294,10 @@ const resultExplainer = [
   {
     label: 'product_issue',
     detail: 'A valid support request about workflow, access, billing, policy, or product behavior.',
+  },
+  {
+    label: 'feature_request',
+    detail: 'A request for new functionality or product enhancement that should be routed rather than answered as an FAQ.',
   },
   {
     label: 'bug',
