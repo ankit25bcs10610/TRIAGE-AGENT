@@ -13,6 +13,9 @@ Topic: API, Console, usage, and standard troubleshooting
 ## Extracted support content
 
 - The Claude Help Center has a dedicated `Claude API and Console` collection covering API access, supported regions, console login, workspace and organization setup, workbench usage, cost and usage reporting, roles and permissions, and prompt sharing.
+- The official `How can I access the Claude API?` article says organizations that want to build with the Claude API can create a Claude Console account.
+- That article says the Claude Console is the place to create API keys, add users to a team, set up billing, and experiment with Claude on the Workbench.
+- The same article notes that API access is subject to Anthropic’s Commercial Terms of Service.
 - The same collection includes official troubleshooting topics for API documentation, API connection errors, connectivity checks, and where to get API support.
 - The collection also includes FAQ topics such as context window questions, individual use, account relationships, and account deletion.
 - This source supports safe replies about documented API usage patterns, console navigation, and official troubleshooting paths when the relevant article content is present in the corpus.
@@ -27,3 +30,5 @@ Topic: API, Console, usage, and standard troubleshooting
 
 - Official collection used: `Claude API and Console`
 - Source URL: https://support.claude.com/en/collections/5370014-claude-api-and-console
+- Official article used: `How can I access the Claude API?`
+- Source URL: https://support.claude.com/en/articles/8114521-how-can-i-access-the-anthropic-api
