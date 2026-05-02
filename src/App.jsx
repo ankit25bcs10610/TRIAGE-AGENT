@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 const datasetStats = [
-  { label: 'Starter Tickets', value: '3', detail: 'template rows bundled in repo' },
-  { label: 'Regression Fixtures', value: '18', detail: '10 baseline + 8 high-risk cases' },
+  { label: 'Demo Full-Run Tickets', value: '4', detail: 'starter model-backed input rows' },
+  { label: 'Regression Fixtures', value: '20', detail: '11 baseline + 9 high-risk cases' },
   { label: 'Supported Companies', value: '3+1', detail: 'Claude, HackerRank, Visa, Unknown' },
   { label: 'Output Fields', value: '8', detail: 'final CSV export columns' },
 ]
@@ -20,6 +20,18 @@ const files = [
     caption: 'Corpus guide',
     description:
       'Explains how to build the local corpus using only the approved HackerRank, Claude, and Visa support sources.',
+  },
+  {
+    name: 'support_tickets.csv',
+    caption: 'Demo full-run input',
+    description:
+      'Starter ticket CSV that lets the model-backed command run once real corpus files are added.',
+  },
+  {
+    name: 'sample_support_tickets.csv',
+    caption: 'Demo sample set',
+    description:
+      'Starter labeled examples used to ground the full-run prompt and demonstrate request-type coverage.',
   },
   {
     name: 'starter_tickets.csv',

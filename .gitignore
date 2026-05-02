@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 __pycache__/
 *.pyc
+triage_results.csv
+triage_results.jsonl
+results.csv
+*.jsonl

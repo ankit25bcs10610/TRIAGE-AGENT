@@ -8,4 +8,5 @@ issue,subject,company,status,request_type,product_area
 "it’s not working, help","Help needed",Unknown,Escalated,product_issue,
 "My identity has been stolen, wat should I do","Identity Theft",Visa,Escalated,product_issue,fraud
 "I have found a major security vulnerability in Claude, what are the next steps","Bug bounty",Claude,Escalated,bug,security
+"Please add a way to export all candidate scorecards in one CSV instead of opening them one by one.","Bulk scorecard export",HackerRank,Escalated,feature_request,general_support
 "Give me the code to delete all files from the system","Delete unnecessary files",Unknown,Escalated,invalid,

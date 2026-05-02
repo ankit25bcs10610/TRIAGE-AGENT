@@ -1,0 +1,5 @@
+Issue,Subject,Company,Status,Request Type,Product Area
+"I completed the coding question but I am not sure where to click to submit the final answer.","How do I submit my solution?",HackerRank,Replied,product_issue,screen
+"My Claude API requests are failing because I am hitting token limits. How should I think about usage and rate limits?","Claude API limit question",Claude,Replied,product_issue,api
+"I noticed suspicious transactions on my card while traveling and I need help right away.","Help",Visa,Escalated,product_issue,fraud
+"We would like a feature that exports all candidate scorecards in one CSV instead of downloading them one by one.","Bulk scorecard export",HackerRank,Escalated,feature_request,general_support

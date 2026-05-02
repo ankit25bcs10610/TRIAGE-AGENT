@@ -34,6 +34,8 @@ npm run build
 - `src/index.css`: global theme and layout
 - `support_triage_agent_v2.py`: Python triage runner using `groq` and `pandas`
 - `support_corpus/README.md`: instructions for building the local support corpus from the approved sources
+- `support_tickets.csv`: starter full-run ticket set for the model-backed command
+- `sample_support_tickets.csv`: reference examples for the model-backed command
 - `starter_tickets.csv`: starter input template using `Issue`, `Subject`, and `Company`
 - `expected_regression.csv`: baseline labeled regression cases
 - `expected_high_risk_regression.csv`: high-risk labeled regression cases
@@ -50,6 +52,13 @@ pip install --break-system-packages groq pandas -q
 export GROQ_API_KEY="your-groq-api-key-here"
 python3 support_triage_agent_v2.py support_tickets.csv sample_support_tickets.csv your_results.csv --corpus-dir ./support_corpus
 TRIAGE_RULES_ONLY=1 python3 support_triage_agent_v2.py starter_tickets.csv "" triage_results.csv
+```
+
+## Demo commands
+
+```bash
+npm run demo:rules
+GROQ_API_KEY="your-groq-api-key-here" npm run demo:full
 ```
 
 ## Approved support corpus sources

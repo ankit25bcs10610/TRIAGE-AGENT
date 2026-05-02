@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "demo:rules": "TRIAGE_RULES_ONLY=1 python3 support_triage_agent_v2.py starter_tickets.csv \"\" triage_results.csv",
+    "demo:full": "python3 support_triage_agent_v2.py support_tickets.csv sample_support_tickets.csv results.csv --corpus-dir ./support_corpus"
   },
   "dependencies": {
     "react": "^19.2.5",

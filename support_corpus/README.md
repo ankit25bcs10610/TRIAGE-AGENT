@@ -19,3 +19,27 @@ Important rules:
 - Do not mix in outside notes, blogs, or undocumented internal knowledge.
 - Keep the source site name in the file path or file content where possible so the agent can detect company ownership correctly.
 - If the relevant corpus evidence is missing, the agent will escalate instead of answering from memory.
+
+Suggested evaluator-ready structure:
+
+```text
+support_corpus/
+  hackerrank/
+    README.md
+    account-access.md
+    assessments.md
+  claude/
+    README.md
+    api-usage.md
+    billing-and-privacy.md
+  visa/
+    README.md
+    disputes.md
+    card-support.md
+```
+
+Once the real files are added, the evaluator can run:
+
+```bash
+GROQ_API_KEY="their-key" npm run demo:full
+```

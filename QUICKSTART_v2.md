@@ -11,11 +11,13 @@ This repository currently includes a starter template and regression fixtures fo
 Bundled files in this workspace:
 
 - `starter_tickets.csv`: starter input template
-- `expected_regression.csv`: 10 labeled regression cases
-- `expected_high_risk_regression.csv`: 8 labeled high-risk regression cases
+- `support_tickets.csv`: starter full-run ticket set
+- `sample_support_tickets.csv`: starter sample/reference set
+- `expected_regression.csv`: 11 labeled regression cases
+- `expected_high_risk_regression.csv`: 9 labeled high-risk regression cases
 - `chat_session.jsonl`: sample interactive audit log
 
-For full challenge execution, you still need your actual ticket CSV, sample/reference CSV, and extracted support corpus directory.
+For a true evaluator-ready run, you should still replace the starter CSVs with the actual challenge ticket CSVs and populate `support_corpus/` with real extracted support content from the approved sources.
 
 Approved corpus sources:
 
