@@ -16,6 +16,12 @@ const files = [
       'Python triage script that loads tickets, builds prompts, calls the Groq API, and writes the final CSV output.',
   },
   {
+    name: 'support_corpus/README.md',
+    caption: 'Corpus guide',
+    description:
+      'Explains how to build the local corpus using only the approved HackerRank, Claude, and Visa support sources.',
+  },
+  {
     name: 'starter_tickets.csv',
     caption: 'Starter input',
     description:
@@ -107,6 +113,7 @@ const signalBoard = [
 
 const guardrails = [
   'Never invent policies, refunds, access changes, or undocumented procedures.',
+  'Use only the approved support corpus for HackerRank, Claude, and Visa when grounding replies.',
   'Escalate anything involving billing, fraud, legal, compliance, or account modification.',
   'Reply only when the answer is grounded in documented support behavior with high confidence.',
   'Treat uncertainty as a routing signal, not as permission to guess.',
@@ -251,6 +258,11 @@ const troubleshootingTips = [
       'Model-backed processing requires `--corpus-dir` unless you explicitly enable the rules-only fallback mode.',
   },
   {
+    title: 'No corpus evidence found',
+    detail:
+      'If the agent cannot retrieve relevant same-company support content from the approved corpus, it will escalate instead of replying.',
+  },
+  {
     title: 'Rate limit errors',
     detail:
       'Use the lighter Groq model, rerun after cooldown, or switch to rules-only mode for a conservative fallback.',
@@ -285,6 +297,11 @@ const assistantKnowledge = [
     match: ['csv mode', 'run csv', 'batch'],
     answer:
       'Use CSV mode when you want to process a whole ticket file at once. Export GROQ_API_KEY, then run the Python script with input CSV, sample CSV, output CSV, and `--corpus-dir` unless you are using rules-only fallback.',
+  },
+  {
+    match: ['corpus', 'support sources', 'approved sources', 'hackerrank support', 'claude help center', 'visa support'],
+    answer:
+      'Use only the approved support corpus sources: HackerRank Support, Claude Help Center, and Visa Support. If relevant corpus evidence is missing for a ticket, the agent should escalate rather than guess.',
   },
   {
     match: ['chat mode', 'interactive', 'normal conversation'],

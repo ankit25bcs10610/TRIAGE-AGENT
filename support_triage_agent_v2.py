@@ -24,6 +24,12 @@ CONFIG = {
     "temperature": 0.1,
 }
 
+REQUIRED_CORPUS_SOURCES = {
+    "HackerRank": "https://support.hackerrank.com/",
+    "Claude": "https://support.claude.com/en/",
+    "Visa": "https://www.visa.co.in/support.html",
+}
+
 FEATURE_REQUEST_SIGNALS = [
     "feature request",
     "enhancement",
@@ -301,6 +307,7 @@ class RetrievedDocument:
     source: str
     score: float
     snippet: str
+    company: Optional[str] = None
 
 
 def is_missing_api_key() -> bool:
@@ -388,11 +395,22 @@ def load_support_corpus(corpus_dir: Optional[str]) -> list[RetrievedDocument]:
             continue
         if not text:
             continue
+        source_text = str(path)
+        lowered = normalize_text(f"{path.name} {text[:1200]}")
+        company = None
+        if "hackerrank" in lowered:
+            company = "HackerRank"
+        elif "claude" in lowered or "anthropic" in lowered:
+            company = "Claude"
+        elif "visa" in lowered:
+            company = "Visa"
+
         documents.append(
             RetrievedDocument(
-                source=str(path),
+                source=source_text,
                 score=0.0,
                 snippet=text[:4000],
+                company=company,
             )
         )
 
@@ -410,6 +428,12 @@ def retrieve_support_documents(
     if not documents:
         return []
 
+    company_filtered = [
+        document for document in documents if document.company in {company, None}
+    ]
+    if company_filtered:
+        documents = company_filtered
+
     query_terms = {
         token
         for token in normalize_text(f"{company} {subject} {issue}").replace("/", " ").split()
@@ -426,6 +450,7 @@ def retrieve_support_documents(
                 source=document.source,
                 score=score,
                 snippet=document.snippet[:700],
+                company=document.company,
             )
         )
 
@@ -864,17 +889,21 @@ def build_system_prompt(
             evidence_lines.append(
                 f"Evidence {index}:\n"
                 f"  Source: {doc.source}\n"
+                f"  Company: {doc.company or 'Unknown'}\n"
                 f"  Score: {doc.score:.1f}\n"
                 f"  Snippet: {doc.snippet[:500].replace(chr(10), ' ')}"
             )
         evidence_section = "\nRETRIEVED SUPPORT DOCUMENTATION:\n" + "\n".join(evidence_lines)
 
+    allowed_source = REQUIRED_CORPUS_SOURCES.get(ticket_company, "provided support corpus only")
     return f"""Triage support tickets for {ticket_company}.
 
 Context: {focus}
 Allowed product areas: {", ".join(product_areas)}
+Approved support source: {allowed_source}
 
 Use only the retrieved support documentation and the provided examples. If evidence is missing or weak, escalate.
+Never answer from memory or general product knowledge. If the retrieved snippets do not clearly support a safe answer, escalate.
 Reply only for narrow, low-risk FAQ-style usage questions.
 Escalate if the ticket involves billing, refunds, fraud, disputes, privacy, security, account access, admin actions, policy, or uncertainty.
 
@@ -921,6 +950,13 @@ def make_triage_decision(
         company,
         corpus_documents or [],
     )
+    if not retrieved_docs:
+        result = make_rules_only_decision(issue, subject, company)
+        result.justification = (
+            "No relevant support-corpus evidence was retrieved for this company, so the ticket should be escalated."
+        )
+        return annotate_risk_and_route(result, risk, "rules_only", ["no corpus evidence"])
+
     system_prompt = build_system_prompt(sample_df, company, retrieved_docs)
 
     user_message = f"""Subject: {subject if subject else "[No subject]"}

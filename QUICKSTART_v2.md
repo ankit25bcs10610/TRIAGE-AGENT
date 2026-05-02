@@ -17,6 +17,14 @@ Bundled files in this workspace:
 
 For full challenge execution, you still need your actual ticket CSV, sample/reference CSV, and extracted support corpus directory.
 
+Approved corpus sources:
+
+- HackerRank Support: [https://support.hackerrank.com/](https://support.hackerrank.com/)
+- Claude Help Center: [https://support.claude.com/en/](https://support.claude.com/en/)
+- Visa Support: [https://www.visa.co.in/support.html](https://www.visa.co.in/support.html)
+
+The agent should use only content extracted from those support sites. If no relevant corpus evidence is found for a ticket, the safe behavior is to escalate.
+
 ## Running the Agent
 
 ### Step 1: Set Your API Key
