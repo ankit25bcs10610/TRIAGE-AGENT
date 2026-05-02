@@ -27,15 +27,18 @@ support_corpus/
   hackerrank/
     README.md
     account-access.md
-    assessments.md
+    assessment-workflows.md
+    submission-help.md
   claude/
     README.md
     api-usage.md
-    billing-and-privacy.md
+    rate-limits.md
+    privacy-and-retention.md
   visa/
     README.md
     disputes.md
-    card-support.md
+    lost-or-stolen-cards.md
+    travel-support.md
 ```
 
 Once the real files are added, the evaluator can run:
