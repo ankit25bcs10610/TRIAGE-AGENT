@@ -12,9 +12,18 @@ Topic: API, Console, usage, and standard troubleshooting
 
 ## Extracted support content
 
-Paste only official Claude Help Center content here.
+- The Claude Help Center has a dedicated `Claude API and Console` collection covering API access, supported regions, console login, workspace and organization setup, workbench usage, cost and usage reporting, roles and permissions, and prompt sharing.
+- The same collection includes official troubleshooting topics for API documentation, API connection errors, connectivity checks, and where to get API support.
+- The collection also includes FAQ topics such as context window questions, individual use, account relationships, and account deletion.
+- This source supports safe replies about documented API usage patterns, console navigation, and official troubleshooting paths when the relevant article content is present in the corpus.
+- It does not justify speculative answers about undocumented behavior, policy exceptions, or account recovery beyond what the help center explicitly documents.
 
 ## Notes for the evaluator
 
 - Keep this file focused on documented usage guidance.
 - Do not add outside API advice or general model knowledge unless it appears in the approved support corpus.
+
+## Source notes
+
+- Official collection used: `Claude API and Console`
+- Source URL: https://support.claude.com/en/collections/5370014-claude-api-and-console
