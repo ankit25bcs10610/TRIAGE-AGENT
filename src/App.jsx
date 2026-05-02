@@ -289,7 +289,7 @@ const assistantKnowledge = [
   {
     match: ['chat mode', 'interactive', 'normal conversation'],
     answer:
-      'Use chat mode when you want to triage one issue at a time in the terminal. Run `python3 support_triage_agent_v2.py --chat sample_support_tickets.csv`, then enter an issue and optionally set `/company` or `/subject`.',
+      'Use chat mode when you want to triage one issue at a time in the terminal. Run `python3 support_triage_agent_v2.py --chat [sample_csv]`, then enter an issue and optionally set `/company` or `/subject`.',
   },
   {
     match: ['columns', 'csv contain', 'headers', 'format'],
@@ -938,7 +938,7 @@ function App() {
       <section className="section-block" id="quality-targets">
         <div className="section-heading">
           <span>Quality targets</span>
-          <h2>Benchmarks to review after processing the 29 tickets.</h2>
+          <h2>Benchmarks to review after any full triage run.</h2>
         </div>
         <div className="metric-grid">
           {metrics.map((metric) => (
@@ -1032,7 +1032,7 @@ function App() {
               </article>
               <article className="footer-action-card">
                 <strong>2. Launch triage</strong>
-                <span>Process all 29 tickets end to end.</span>
+                <span>Process your full ticket set end to end.</span>
               </article>
               <article className="footer-action-card">
                 <strong>3. Review output</strong>

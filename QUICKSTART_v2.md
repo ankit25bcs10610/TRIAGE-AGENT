@@ -67,7 +67,7 @@ cat results.csv
 - `response`: reply text or escalation reason
 - `product_area`: category such as `screen`, `privacy`, `billing`
 - `status`: `Replied` or `Escalated`
-- `request_type`: `product_issue`, `bug`, or `invalid`
+- `request_type`: `product_issue`, `feature_request`, `bug`, or `invalid`
 - `justification`: why the decision was made
 
 Example output:
@@ -103,10 +103,10 @@ For each ticket, it:
 
 ## Expected Results Distribution
 
-Based on the sample data:
+The exact split depends on your real ticket set, but the bundled regression fixtures are designed to reinforce a conservative routing posture:
 
-- Replied: about 14-15 tickets
-- Escalated: about 14-15 tickets
+- high-risk, billing, fraud, privacy, and access cases should escalate
+- straightforward FAQ-style usage questions are the main cases that should reply
 
 ## Troubleshooting
 
