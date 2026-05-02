@@ -1,0 +1,183 @@
+:root {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #16202a;
+  background:
+    linear-gradient(180deg, #f7efe6 0%, #eef4f8 44%, #fbfcfd 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --text: #16202a;
+  --muted: #52606d;
+  --accent: #c2410c;
+  --panel: rgba(255, 252, 248, 0.72);
+  --soft: #f3f6f8;
+  --line: rgba(22, 32, 42, 0.1);
+  --shadow-soft: 0 18px 48px rgba(30, 41, 59, 0.08);
+}
+
+:root[data-theme='midnight'] {
+  color: #e5edf7;
+  background:
+    linear-gradient(180deg, #08111d 0%, #0d1a2b 46%, #14263a 100%);
+  --text: #e5edf7;
+  --muted: #9db0c4;
+  --accent: #7dd3fc;
+  --panel: rgba(10, 20, 34, 0.82);
+  --soft: #102132;
+  --line: rgba(189, 214, 241, 0.14);
+  --shadow-soft: 0 24px 56px rgba(2, 6, 23, 0.34);
+}
+
+:root[data-theme='graphite'] {
+  color: #edf2f7;
+  background:
+    linear-gradient(180deg, #111318 0%, #191d25 44%, #222833 100%);
+  --text: #edf2f7;
+  --muted: #a6b0bf;
+  --accent: #f59e0b;
+  --panel: rgba(22, 26, 33, 0.84);
+  --soft: #1b2029;
+  --line: rgba(226, 232, 240, 0.13);
+  --shadow-soft: 0 24px 56px rgba(0, 0, 0, 0.36);
+}
+
+:root[data-theme='aurora'] {
+  color: #eaf7ff;
+  background:
+    linear-gradient(180deg, #07131a 0%, #0b1e28 40%, #112d30 100%);
+  --text: #eaf7ff;
+  --muted: #9ec2c8;
+  --accent: #2dd4bf;
+  --panel: rgba(7, 24, 30, 0.82);
+  --soft: #0f262d;
+  --line: rgba(186, 230, 253, 0.13);
+  --shadow-soft: 0 24px 56px rgba(1, 18, 22, 0.36);
+}
+
+:root[data-theme='mint'] {
+  color: #15312d;
+  background:
+    linear-gradient(180deg, #f0fbf8 0%, #edf8f5 42%, #f8fcfb 100%);
+  --text: #15312d;
+  --muted: #53706b;
+  --accent: #0f766e;
+  --panel: rgba(246, 255, 252, 0.8);
+  --soft: #edf8f4;
+  --line: rgba(21, 49, 45, 0.1);
+  --shadow-soft: 0 18px 48px rgba(16, 88, 80, 0.1);
+}
+
+:root[data-theme='sunset'] {
+  color: #22161b;
+  background:
+    linear-gradient(180deg, #fff0e8 0%, #fff8f1 38%, #f9f1ff 100%);
+  --text: #22161b;
+  --muted: #70545c;
+  --accent: #d45720;
+  --panel: rgba(255, 250, 246, 0.78);
+  --soft: #fff3ed;
+  --line: rgba(34, 22, 27, 0.1);
+  --shadow-soft: 0 18px 48px rgba(168, 85, 35, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(220, 95, 42, 0.1), transparent 24%),
+    radial-gradient(circle at 90% 12%, rgba(37, 99, 235, 0.08), transparent 24%);
+}
+
+:root[data-theme='midnight'] body::before {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(125, 211, 252, 0.12), transparent 24%),
+    radial-gradient(circle at 90% 12%, rgba(45, 212, 191, 0.1), transparent 24%);
+}
+
+:root[data-theme='graphite'] body::before {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.12), transparent 24%),
+    radial-gradient(circle at 90% 12%, rgba(148, 163, 184, 0.1), transparent 24%);
+}
+
+:root[data-theme='aurora'] body::before {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(45, 212, 191, 0.1), transparent 24%),
+    radial-gradient(circle at 90% 12%, rgba(34, 211, 238, 0.12), transparent 24%);
+}
+
+:root[data-theme='mint'] body::before {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(20, 184, 166, 0.08), transparent 24%),
+    radial-gradient(circle at 90% 12%, rgba(34, 197, 94, 0.07), transparent 24%);
+}
+
+:root[data-theme='sunset'] body::before {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(249, 115, 22, 0.1), transparent 24%),
+    radial-gradient(circle at 90% 12%, rgba(244, 114, 182, 0.08), transparent 24%);
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+h1 {
+  max-width: 11ch;
+  margin: 12px 0 16px;
+  font-size: clamp(2.9rem, 5vw, 5.4rem);
+}
+
+h2 {
+  max-width: 18ch;
+  margin-bottom: 0;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--muted);
+}
