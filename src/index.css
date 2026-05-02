@@ -1,87 +1,88 @@
 :root {
-  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
-  line-height: 1.5;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
-  color: #16202a;
-  background:
-    linear-gradient(180deg, #f7efe6 0%, #eef4f8 44%, #fbfcfd 100%);
+  color: #1e293b;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --text: #16202a;
-  --muted: #52606d;
-  --accent: #c2410c;
-  --panel: rgba(255, 252, 248, 0.72);
-  --soft: #f3f6f8;
-  --line: rgba(22, 32, 42, 0.1);
-  --shadow-soft: 0 18px 48px rgba(30, 41, 59, 0.08);
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #e25822;
+  --panel: rgba(255, 255, 255, 0.72);
+  --soft: #f8fafc;
+  --line: rgba(148, 163, 184, 0.18);
+  --shadow-soft: 0 12px 36px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.02);
+  --shadow-lux: 0 24px 64px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.04);
+  --radius: 18px;
 }
 
 :root[data-theme='midnight'] {
-  color: #e5edf7;
-  background:
-    linear-gradient(180deg, #08111d 0%, #0d1a2b 46%, #14263a 100%);
-  --text: #e5edf7;
-  --muted: #9db0c4;
-  --accent: #7dd3fc;
-  --panel: rgba(10, 20, 34, 0.82);
-  --soft: #102132;
-  --line: rgba(189, 214, 241, 0.14);
-  --shadow-soft: 0 24px 56px rgba(2, 6, 23, 0.34);
+  color: #f1f5f9;
+  background: linear-gradient(135deg, #090d16 0%, #0e1726 50%, #17253a 100%);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --panel: rgba(15, 23, 42, 0.85);
+  --soft: #1e293b;
+  --line: rgba(148, 163, 184, 0.15);
+  --shadow-soft: 0 20px 48px rgba(0, 0, 0, 0.35);
+  --shadow-lux: 0 32px 72px rgba(0, 0, 0, 0.45);
 }
 
 :root[data-theme='graphite'] {
-  color: #edf2f7;
-  background:
-    linear-gradient(180deg, #111318 0%, #191d25 44%, #222833 100%);
-  --text: #edf2f7;
-  --muted: #a6b0bf;
-  --accent: #f59e0b;
-  --panel: rgba(22, 26, 33, 0.84);
-  --soft: #1b2029;
-  --line: rgba(226, 232, 240, 0.13);
-  --shadow-soft: 0 24px 56px rgba(0, 0, 0, 0.36);
+  color: #f1f5f9;
+  background: linear-gradient(135deg, #12151c 0%, #1a1e27 50%, #252b36 100%);
+  --text: #f8fafc;
+  --muted: #a1a1aa;
+  --accent: #fb923c;
+  --panel: rgba(24, 24, 27, 0.88);
+  --soft: #27272a;
+  --line: rgba(255, 255, 255, 0.08);
+  --shadow-soft: 0 20px 48px rgba(0, 0, 0, 0.4);
+  --shadow-lux: 0 32px 72px rgba(0, 0, 0, 0.5);
 }
 
 :root[data-theme='aurora'] {
-  color: #eaf7ff;
-  background:
-    linear-gradient(180deg, #07131a 0%, #0b1e28 40%, #112d30 100%);
-  --text: #eaf7ff;
-  --muted: #9ec2c8;
+  color: #f1f5f9;
+  background: linear-gradient(135deg, #040d12 0%, #0d2229 50%, #15323a 100%);
+  --text: #f0fdf4;
+  --muted: #88a4ab;
   --accent: #2dd4bf;
-  --panel: rgba(7, 24, 30, 0.82);
-  --soft: #0f262d;
-  --line: rgba(186, 230, 253, 0.13);
-  --shadow-soft: 0 24px 56px rgba(1, 18, 22, 0.36);
+  --panel: rgba(13, 30, 36, 0.82);
+  --soft: #112d35;
+  --line: rgba(45, 212, 191, 0.12);
+  --shadow-soft: 0 20px 48px rgba(0, 0, 0, 0.35);
+  --shadow-lux: 0 32px 72px rgba(0, 0, 0, 0.45);
 }
 
 :root[data-theme='mint'] {
-  color: #15312d;
-  background:
-    linear-gradient(180deg, #f0fbf8 0%, #edf8f5 42%, #f8fcfb 100%);
-  --text: #15312d;
-  --muted: #53706b;
-  --accent: #0f766e;
-  --panel: rgba(246, 255, 252, 0.8);
-  --soft: #edf8f4;
-  --line: rgba(21, 49, 45, 0.1);
-  --shadow-soft: 0 18px 48px rgba(16, 88, 80, 0.1);
+  color: #0f172a;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
+  --text: #111827;
+  --muted: #4b5563;
+  --accent: #0d9488;
+  --panel: rgba(255, 255, 255, 0.78);
+  --soft: #f0fdf4;
+  --line: rgba(16, 185, 129, 0.15);
+  --shadow-soft: 0 12px 36px rgba(4, 120, 87, 0.05);
+  --shadow-lux: 0 24px 64px rgba(4, 120, 87, 0.08);
 }
 
 :root[data-theme='sunset'] {
-  color: #22161b;
-  background:
-    linear-gradient(180deg, #fff0e8 0%, #fff8f1 38%, #f9f1ff 100%);
-  --text: #22161b;
-  --muted: #70545c;
-  --accent: #d45720;
-  --panel: rgba(255, 250, 246, 0.78);
-  --soft: #fff3ed;
-  --line: rgba(34, 22, 27, 0.1);
-  --shadow-soft: 0 18px 48px rgba(168, 85, 35, 0.12);
+  color: #0f172a;
+  background: linear-gradient(135deg, #fffafb 0%, #fff1f2 50%, #ffe4e6 100%);
+  --text: #1f1114;
+  --muted: #6b7280;
+  --accent: #e11d48;
+  --panel: rgba(255, 255, 255, 0.78);
+  --soft: #fff5f6;
+  --line: rgba(225, 29, 72, 0.12);
+  --shadow-soft: 0 12px 36px rgba(190, 18, 60, 0.05);
+  --shadow-lux: 0 24px 64px rgba(190, 18, 60, 0.08);
 }
 
 * {
@@ -102,82 +103,83 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(circle at 10% 10%, rgba(220, 95, 42, 0.1), transparent 24%),
-    radial-gradient(circle at 90% 12%, rgba(37, 99, 235, 0.08), transparent 24%);
+  background: radial-gradient(circle at 10% 10%, rgba(226, 88, 34, 0.06), transparent 30%),
+              radial-gradient(circle at 85% 15%, rgba(14, 165, 233, 0.05), transparent 35%);
+  z-index: -1;
 }
 
 :root[data-theme='midnight'] body::before {
-  background:
-    radial-gradient(circle at 10% 10%, rgba(125, 211, 252, 0.12), transparent 24%),
-    radial-gradient(circle at 90% 12%, rgba(45, 212, 191, 0.1), transparent 24%);
+  background: radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.1), transparent 30%),
+              radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.08), transparent 35%);
 }
 
 :root[data-theme='graphite'] body::before {
-  background:
-    radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.12), transparent 24%),
-    radial-gradient(circle at 90% 12%, rgba(148, 163, 184, 0.1), transparent 24%);
+  background: radial-gradient(circle at 10% 10%, rgba(251, 146, 60, 0.1), transparent 30%),
+              radial-gradient(circle at 85% 15%, rgba(156, 163, 175, 0.08), transparent 35%);
 }
 
 :root[data-theme='aurora'] body::before {
-  background:
-    radial-gradient(circle at 10% 10%, rgba(45, 212, 191, 0.1), transparent 24%),
-    radial-gradient(circle at 90% 12%, rgba(34, 211, 238, 0.12), transparent 24%);
+  background: radial-gradient(circle at 10% 10%, rgba(45, 212, 191, 0.08), transparent 30%),
+              radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.1), transparent 35%);
 }
 
 :root[data-theme='mint'] body::before {
-  background:
-    radial-gradient(circle at 10% 10%, rgba(20, 184, 166, 0.08), transparent 24%),
-    radial-gradient(circle at 90% 12%, rgba(34, 197, 94, 0.07), transparent 24%);
+  background: radial-gradient(circle at 10% 10%, rgba(13, 148, 136, 0.06), transparent 30%),
+              radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.05), transparent 35%);
 }
 
 :root[data-theme='sunset'] body::before {
-  background:
-    radial-gradient(circle at 10% 10%, rgba(249, 115, 22, 0.1), transparent 24%),
-    radial-gradient(circle at 90% 12%, rgba(244, 114, 182, 0.08), transparent 24%);
+  background: radial-gradient(circle at 10% 10%, rgba(225, 29, 72, 0.06), transparent 30%),
+              radial-gradient(circle at 85% 15%, rgba(244, 63, 94, 0.05), transparent 35%);
 }
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 #root {
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, h4, h5, h6, p {
   margin-top: 0;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Space Grotesk", "Avenir Next", sans-serif;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+h1, h2, h3, h4 {
+  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
 h1 {
-  max-width: 11ch;
-  margin: 12px 0 16px;
-  font-size: clamp(2.9rem, 5vw, 5.4rem);
+  font-size: clamp(2.5rem, 4.2vw, 4.8rem);
+  font-weight: 700;
+  margin: 12px 0 20px;
 }
 
+.hero-title {
+  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 70%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
 h2 {
-  max-width: 18ch;
-  margin-bottom: 0;
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 h3 {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
 p {
   color: var(--muted);
+  font-size: 1rem;
 }

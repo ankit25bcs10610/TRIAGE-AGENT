@@ -558,7 +558,7 @@ function App() {
         <div className="eyebrow">Support triage project</div>
         <div className="hero-grid">
           <div>
-            <h1>Build and run an AI support triage workflow from CSV to final decision.</h1>
+            <h1 className="hero-title">Build and run an AI support triage workflow from CSV to final decision.</h1>
             <p className="hero-copy">
               This interface packages your prompt into a clean project brief: what
               data you have, how the agent should behave, how to run it, what output
@@ -929,55 +929,78 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block dual-layout" id="runbook">
+      <section className="section-block" id="runbook">
         <div className="section-heading">
           <span>Runbook</span>
           <h2>Use these commands to run the agent end to end.</h2>
         </div>
-        <div className="command-card">
-          {commands.map((command, index) => (
-            <div key={command} className="command-row">
-              <code className="command-line">{command}</code>
-              <button
-                type="button"
-                className="command-copy"
-                onClick={() => copyText(`command-${index}`, command)}
-              >
-                {copiedItem === `command-${index}` ? 'Copied' : 'Copy'}
-              </button>
+        <div className="dual-layout">
+          <div className="terminal-window">
+            <div className="terminal-header">
+              <div className="terminal-dots">
+                <span className="dot red"></span>
+                <span className="dot amber"></span>
+                <span className="dot green"></span>
+              </div>
+              <span className="terminal-title">bash - support_triage_runbook</span>
             </div>
-          ))}
-        </div>
-        <div className="schema-card">
-          <h3>Included script</h3>
-          <p>
-            The workspace now contains <strong>support_triage_agent_v2.py</strong>,
-            the exact Python workflow that performs prompt construction, company
-            detection, resume handling, JSONL audit logging, Groq API calls, and CSV export.
-          </p>
-          <h3>Expected output schema</h3>
-          <div className="schema-grid">
-            {[
-              'issue',
-              'subject',
-              'company',
-              'response',
-              'product_area',
-              'status',
-              'request_type',
-              'justification',
-            ].map((field) => (
-              <span key={field}>{field}</span>
-            ))}
+            <div className="terminal-body">
+              {commands.map((command, index) => (
+                <div key={command} className="terminal-row">
+                  <div className="terminal-prompt-prefix">
+                    <span className="terminal-prompt">$</span>
+                    <code className="terminal-line">{command}</code>
+                  </div>
+                  <button
+                    type="button"
+                    className="terminal-copy-btn"
+                    onClick={() => copyText(`command-${index}`, command)}
+                  >
+                    {copiedItem === `command-${index}` ? 'Copied!' : 'Copy'}
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
-          <p>
-            `status` must be <strong>Replied</strong> or <strong>Escalated</strong>.
-            `request_type` may be <strong>product_issue</strong>,{' '}
-            <strong>feature_request</strong>, <strong>bug</strong>, or <strong>invalid</strong>.
-          </p>
-          <p>
-            Model-backed runs also require a support corpus directory unless you intentionally switch to rules-only mode.
-          </p>
+
+          <div className="documentation-pane">
+            <div className="doc-section">
+              <span className="doc-eyebrow">Script Info</span>
+              <h3>Included Python script</h3>
+              <p>
+                The workspace contains <strong>support_triage_agent_v2.py</strong>,
+                the complete Python workflow that performs prompt construction, company
+                detection, resume handling, JSONL audit logging, Groq API calls, and CSV export.
+              </p>
+            </div>
+
+            <div className="doc-section">
+              <span className="doc-eyebrow">Data Schema</span>
+              <h3>Expected output CSV fields</h3>
+              <div className="schema-grid">
+                {[
+                  'issue',
+                  'subject',
+                  'company',
+                  'response',
+                  'product_area',
+                  'status',
+                  'request_type',
+                  'justification',
+                ].map((field) => (
+                  <span key={field} className="schema-tag">{field}</span>
+                ))}
+              </div>
+              <p>
+                `status` must be <strong>Replied</strong> or <strong>Escalated</strong>.
+                `request_type` may be <strong>product_issue</strong>,{' '}
+                <strong>feature_request</strong>, <strong>bug</strong>, or <strong>invalid</strong>.
+              </p>
+              <p className="doc-footer-hint">
+                Model-backed runs also require a support corpus directory unless you intentionally switch to rules-only mode.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1049,12 +1072,14 @@ function App() {
                 <span>{ticket.requestType}</span>
                 <span>{ticket.productArea}</span>
               </div>
-              <p>
-                <strong>Justification:</strong> {ticket.justification}
-              </p>
-              <p>
-                <strong>Response:</strong> {ticket.response}
-              </p>
+              <div className="example-outcome-block">
+                <p>
+                  <strong>Justification:</strong> {ticket.justification}
+                </p>
+                <p>
+                  <strong>Response:</strong> {ticket.response}
+                </p>
+              </div>
             </article>
           ))}
         </div>
