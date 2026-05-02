@@ -1040,7 +1040,7 @@ def process_tickets(
         print(f"Input file not found: {input_file}", file=sys.stderr)
         sys.exit(1)
 
-    if is_missing_api_key() and os.environ.get("TRIAGE_RULES_ONLY", "").strip() != "1":
+    if is_missing_api_key():
         print(
             "Missing GROQ_API_KEY. Export a real key before running the script.",
             file=sys.stderr,

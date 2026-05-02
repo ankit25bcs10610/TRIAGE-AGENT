@@ -1,0 +1,18 @@
+Support Triage Agent Session - AI Chat Transcript
+
+Ticket 1:
+- Company: Claude
+- Issue: "My Claude workspace access was removed after my admin changed permissions."
+- Decision Status: escalated
+- Request Type: product_issue
+- Product Area: conversation_management
+- Justification: "Rules-only fallback applied (high risk: high-risk keyword match, admin or account action, claude-sensitive support domain)."
+- Response: "This request needs review by a human support specialist before we provide a final answer."
+
+Ticket 2:
+- Issue: "which companies are there"
+- Decision Status: escalated
+- Request Type: invalid
+- Product Area: Unknown
+- Justification: "Bugs and invalid requests should not receive final automated replies."
+- Response: "This request needs review by a human support specialist before we provide a final answer."
